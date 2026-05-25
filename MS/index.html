@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MethaSense — Monitoramento Inteligente de Metano</title>
+    <meta name="description"
+        content="Plataforma inteligente para monitoramento de emissões de metano em tempo real. Liga Jovem Sebrae 2026.">
+    <meta property="og:title" content="MethaSense — Monitoramento de Metano">
+    <meta property="og:description" content="Plataforma inteligente para detectar emissões de metano em tempo real.">
+    <meta property="og:image" content="assets/hero.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="top-bar" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" role="banner">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo MethaSense" width="38" height="38">
+            <span>MethaSense</span>
+        </div>
+        <nav class="nav-menu" aria-label="Navegação principal">
+            <a href="#problema">Problema</a>
+            <a href="#tecnologia">Tecnologia</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#impacto">Impacto</a>
+            <a href="#equipe">Equipe</a>
+            <a href="#contato" class="nav-cta">Entrar em contato</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Apresentação">
+        <div class="hero-content">
+            <p class="hero-mini">Tecnologia Ambiental · Liga Jovem Sebrae 2026</p>
+            <h1>Detectando o invisível<br>antes que vire desastre.</h1>
+            <p class="hero-text">
+                Plataforma inteligente para monitoramento de emissões de metano em tempo real —
+                dados concretos para decisões ambientais mais rápidas e eficazes.
+            </p>
+            <div class="buttons">
+                <a href="#tecnologia" class="btn-primary">Conhecer a Solução</a>
+                <a href="#contato" class="btn-secondary">Solicitar Demo →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="Destaques">
+        <div class="stat-card reveal">
+            <h2>24h</h2>
+            <p>Monitoramento contínuo</p>
+        </div>
+        <div class="stat-card reveal">
+            <h2>80×</h2>
+            <p>Mais nocivo que CO₂ em 20 anos</p>
+        </div>
+        <div class="stat-card reveal">
+            <h2>Tempo Real</h2>
+            <p>Alertas inteligentes</p>
+        </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section id="problema" class="content section-off border-top">
+        <div class="reveal">
+            <div class="section-title">
+                <span>O Problema</span>
+                <h2>O perigo invisível do metano</h2>
+            </div>
+            <div class="section-divider"></div>
+            <p>
+                O metano é responsável por cerca de 30% do aquecimento global desde a era pré-industrial.
+                Vazamentos em pequenas propriedades rurais (biodigestores), cooperativas de reciclagem locais e lavouras
+                passam despercebidos e causam danos
+                irreversíveis ao clima — muitas vezes porque simplesmente não existem ferramentas
+                de monitoramento acessíveis e eficazes no mercado.
+            </p>
+        </div>
+        <div class="problem-numbers reveal">
+            <div class="problem-number">
+                <h3>30%</h3>
+                <p>do aquecimento global causado pelo metano</p>
+            </div>
+            <div class="problem-number">
+                <h3>80×</h3>
+                <p>mais potente que o CO₂ no curto prazo</p>
+            </div>
+            <div class="problem-number">
+                <h3>570 Mt</h3>
+                <p>de metano emitidos por ano globalmente</p>
+            </div>
+            <div class="problem-number">
+                <h3>45%</h3>
+                <p>das emissões têm origem humana e são evitáveis</p>
+            </div>
+        </div>
+        <p class="problem-source">Fontes: IPCC AR6 (2023) · Global Methane Tracker, IEA (2024)</p>
+    </section>
+
+    <!-- TECNOLOGIA -->
+    <section id="tecnologia" class="content section-white border-top">
+        <div class="reveal">
+            <div class="section-title">
+                <span>Tecnologia</span>
+                <h2>Como funciona</h2>
+            </div>
+            <div class="section-divider"></div>
+            <p>Arquitetura modular com sensores físicos, transmissão de dados e análise inteligente em nuvem.</p>
+        </div>
+        <div class="cards">
+            <div class="card reveal">
+                <div class="card-icon">🌍</div>
+                <h3>Monitoramento</h3>
+                <p>Sensores MQ-4 identificam concentrações de metano com capacidade de detecção contínua, operando em
+                    campo.</p>
+            </div>
+            <div class="card reveal">
+                <div class="card-icon">📡</div>
+                <h3>Transmissão</h3>
+                <p>Dados enviados via protocolo MQTT para servidor em nuvem, permitindo atualização contínua das
+                    informações monitoradas.</p>
+            </div>
+            <div class="card reveal">
+                <div class="card-icon">⚠️</div>
+                <h3>Alertas</h3>
+                <p>Sistema identifica riscos ambientais e gera alertas em tempo real.</p>
+            </div>
+        </div>
+        <div class="tech-chips reveal">
+            <span class="chip">Sensor MQ-4</span>
+            <span class="chip">MQTT</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Chart.js</span>
+            <span class="chip">HTML · CSS · JS</span>
+        </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap" class="content section-white border-top">
+        <div class="reveal">
+            <div class="section-title">
+                <span>Evolução</span>
+                <h2>Roadmap do projeto</h2>
+            </div>
+            <div class="section-divider"></div>
+            <p>Desenvolvimento estruturado em etapas, priorizando pesquisa, acessibilidade e evolução gradual da
+                plataforma.</p>
+        </div>
+        <div class="roadmap">
+            <div class="roadmap-step reveal">
+                <div class="roadmap-badge active">Fase 1 — Atual</div>
+                <h4>Pesquisa & Estruturação</h4>
+                <p>Desenvolvimento da proposta, pesquisa sobre emissões de metano, validação do problema e construção da
+                    estrutura inicial da plataforma.</p>
+            </div>
+            <div class="roadmap-step reveal">
+                <div class="roadmap-badge">Fase 2</div>
+                <h4>Dashboard & Visualização</h4>
+                <p>Desenvolvimento de uma interface intuitiva para transformar dados ambientais complexos em informações
+                    acessíveis e compreensíveis.</p>
+            </div>
+            <div class="roadmap-step reveal">
+                <div class="roadmap-badge">Fase 3</div>
+                <h4>Integração de Dados</h4>
+                <p>Integração com bases públicas e fontes externas de monitoramento ambiental para ampliação das
+                    análises e visualizações da plataforma.</p>
+            </div>
+            <div class="roadmap-step reveal">
+                <div class="roadmap-badge">Fase 4</div>
+                <h4>Expansão da Plataforma</h4>
+                <p>Evolução das ferramentas da MethaSense, ampliação das funcionalidades e fortalecimento da proposta de
+                    transparência ambiental.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD TEMPO REAL -->
+    <section class="content section-navy" aria-label="Monitoramento em tempo real">
+        <div class="reveal">
+            <div class="section-title">
+                <span>Monitoramento</span>
+                <h2>Dados em tempo real</h2>
+            </div>
+            <div class="section-divider"></div>
+            <p>A plataforma acompanha continuamente os níveis de metano, permitindo identificar alterações críticas e
+                responder rapidamente.</p>
+        </div>
+
+        <div class="dashboard-container reveal">
+            <div class="dashboard-card">
+                <div class="dashboard-header">
+                    <h3>Nível Atual de Metano</h3>
+                    <div class="status-live" aria-live="polite">
+                        <span class="live-dot" aria-hidden="true"></span>
+                        MONITORAMENTO
+                    </div>
+                </div>
+                <div class="ppm-value" id="ppm-value" aria-live="polite">42 PPM</div>
+                <p class="ppm-status" id="ppm-status">Nível Moderado</p>
+                <canvas id="methaneChart" role="img"
+                    aria-label="Gráfico de concentração de metano ao longo do tempo"></canvas>
+            </div>
+
+            <div class="alerts-box">
+                <div class="alert-card reveal">
+                    <h4>⚠️ Área Monitorada</h4>
+                    <p>Ambiente de monitoramento experimental</p>
+                </div>
+                <div class="alert-card reveal">
+                    <h4>📡 Sensores Integrados</h4>
+                    <p>Coleta contínua de dados ambientais</p>
+                </div>
+                <div class="alert-card reveal">
+                    <h4>🛰️ Status do Sistema</h4>
+                    <p>Plataforma operacional em demonstração</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACTO -->
+    <section id="impacto" class="content section-off border-top">
+        <div class="reveal">
+            <div class="section-title">
+                <span>Impacto</span>
+                <h2>O que a MethaSense muda na prática</h2>
+            </div>
+            <div class="section-divider"></div>
+            <p>Cada sensor instalado representa menos metano na atmosfera, mais conformidade ambiental e decisões mais
+                rápidas. Esses são os números que projetamos para um piloto de 12 meses.</p>
+        </div>
+        <div class="impact-grid reveal">
+            <div class="impact-card">
+                <div class="i-icon">🌿</div>
+                <h3>24h</h3>
+                <p>de monitoramento contínuo dos níveis de metano</p>
+            </div>
+            <div class="impact-card">
+                <div class="i-icon">⚡</div>
+                <h3>&lt;5 min</h3>
+                <p>para alertar sobre vazamentos críticos</p>
+            </div>
+            <div class="impact-card">
+                <div class="i-icon">🏭</div>
+                <h3>100+</h3>
+                <p>empresas no público-alvo inicial do Brasil</p>
+            </div>
+        </div>
+        <div class="reveal" style="margin-top: 40px;">
+            <p>A MethaSense democratiza o monitoramento de emissões: tornamos acessível para fazendas, indústrias de
+                médio porte e prefeituras o que antes era exclusivo de grandes corporações.</p>
+        </div>
+    </section>
+
+    <!-- VISÃO FUTURA -->
+    <section class="content section-navy2">
+        <div class="reveal">
+            <div class="section-title">
+                <span>Futuro</span>
+                <h2>Próxima geração do monitoramento ambiental</h2>
+            </div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="future-grid">
+            <div class="future-card reveal">
+                <h3>🛰️ Satélites</h3>
+                <p>Integração com fontes externas de monitoramento ambiental para ampliar a análise de emissões em larga
+                    escala.</p>
+            </div>
+            <div class="future-card reveal">
+                <h3>🤖 Inteligência Artificial</h3>
+                <p>Uso de análises preditivas para identificar padrões e auxiliar na detecção de riscos ambientais.</p>
+            </div>
+            <div class="future-card reveal">
+                <h3>🌎 Expansão</h3>
+                <p>Estrutura preparada para futuras aplicações em diferentes regiões e cenários de monitoramento
+                    ambiental.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOCKUP / INTERFACE -->
+    <section class="content section-subtle border-top">
+        <div class="reveal">
+            <div class="section-title">
+                <span>Interface</span>
+                <h2>Visual da Plataforma</h2>
+            </div>
+            <div class="section-divider"></div>
+            <p>Dashboard intuitivo, dados em tempo real e alertas visuais claros — projetado para operadores em campo e
+                gestores ambientais.</p>
+        </div>
+        <div class="mockup-box reveal">
+            <img src="assets/dashboard.png"
+                alt="Tela do dashboard da MethaSense mostrando gráficos de concentração de metano">
+        </div>
+    </section>
+
+    <!-- EQUIPE -->
+    <section id="equipe" class="content section-white border-top">
+        <div class="reveal">
+            <div class="section-title">
+                <span>Equipe</span>
+                <h2>Quem está por trás da MethaSense</h2>
+            </div>
+            <div class="section-divider"></div>
+            <p>Projeto desenvolvido para a Liga Jovem Sebrae 2026 por estudantes unidas pela tecnologia, inovação e
+                impacto ambiental.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/taline.jpg" alt="Taline França" class="team-photo">
+                </div>
+                <h3>Taline França</h3>
+                <span class="team-role">Pesquisa & Desenvolvimento</span>
+                <p>Atua no desenvolvimento da proposta da MethaSense, conectando tecnologia, inovação e
+                    sustentabilidade.</p>
+            </div>
+            <div class="team-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/carla.jpg" alt="Francisca Carla" class="team-photo">
+                </div>
+                <h3>Francisca Carla</h3>
+                <span class="team-role">Estratégia & Organização</span>
+                <p>Contribui na estruturação do projeto, organização das ideias e evolução da proposta.</p>
+            </div>
+            <div class="team-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/maria.jpg" alt="Maria Angelina" class="team-photo">
+                </div>
+                <h3>Maria Angelina</h3>
+                <span class="team-role">Comunicação & Impacto</span>
+                <p>Auxilia na comunicação da iniciativa e no fortalecimento do impacto social da MethaSense.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="cta-section">
+        <div class="cta-inner">
+            <div class="reveal">
+                <div class="section-title">
+                    <span>Contato</span>
+                    <h2>Entre em contato</h2>
+                </div>
+                <p class="sub">
+                    Quer conhecer melhor a MethaSense? Entre em contato para saber mais sobre o projeto,
+                    a proposta da plataforma e as possibilidades do monitoramento ambiental inteligente.
+                </p>
+            </div>
+
+            <form class="contact-form reveal" onsubmit="handleSubmit(event)" novalidate>
+                <div class="form-row">
+                    <input type="text" placeholder="Seu nome" required autocomplete="name">
+                    <input type="email" placeholder="Seu e-mail" required autocomplete="email">
+                </div>
+                <input type="text" placeholder="Instituição / Organização" autocomplete="organization">
+                <select>
+                    <option value="" disabled selected>Área de interesse</option>
+                    <option>Agronegócio</option>
+                    <option>Petróleo & Gás</option>
+                    <option>Aterro Sanitário</option>
+                    <option>Indústria</option>
+                    <option>Órgão Público</option>
+                    <option>Outro</option>
+                </select>
+                <textarea placeholder="Conte um pouco sobre seu interesse no projeto ou na proposta da plataforma..."
+                    rows="4"></textarea>
+                <button type="submit" class="btn-cta" id="cta-btn">Enviar Mensagem →</button>
+            </form>
+
+            <div class="contact-info reveal">
+                <div class="contact-item">📧 <strong>contato@methasense.com</strong></div>
+                <div class="contact-item">📍 <strong>Brasil</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h2>METHASENSE</h2>
+                <p>Plataforma inteligente para monitoramento de emissões de metano em tempo real.</p>
+                <p>Tecnologia ambiental voltada à prevenção, sustentabilidade e análise de dados.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navegação</h3>
+                <a href="#problema">O Problema</a>
+                <a href="#tecnologia">Tecnologia</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#impacto">Impacto</a>
+                <a href="#equipe">Equipe</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="footer-column">
+                <h3>Projeto</h3>
+                <p>Liga Jovem Sebrae 2026</p>
+                <p>Projeto conceito em Climate Tech</p>
+                <p>Monitoramento Ambiental Inteligente</p>
+                <p>Inovação & Sustentabilidade</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <a href="mailto:contato@methasense.com">contato@methasense.com</a>
+                <p>Brasil</p>
+                <a href="#contato" style="margin-top: 4px; color: rgba(255,255,255,.55); font-weight: 600;">Entrar em
+                    contato →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 MethaSense — Projeto desenvolvido para a Liga Jovem Sebrae.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        /* ── GRÁFICO ── */
+        const ctx = document.getElementById('methaneChart');
+        let methaneData = [35, 40, 42, 45, 41, 48];
+        let labels = ['10:00', '10:05', '10:10', '10:15', '10:20', '10:25'];
+
+        const methaneChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels,
+                datasets: [{
+                    label: 'Metano (PPM)',
+                    data: methaneData,
+                    borderColor: '#1d4ed8',
+                    backgroundColor: 'rgba(29,78,216,0.10)',
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 2.5,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#1d4ed8'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#cbd5e1',
+                            font: { weight: '600', family: 'Sora' }
+                        }
+                    }
+                },
+                scales: {
+                    x: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,.06)' } },
+                    y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,.06)' } }
+                }
+            }
+        });
+
+        function updateMethane() {
+            const value = Math.floor(Math.random() * 40) + 30;
+            const now = new Date();
+            const timeLabel = now.getHours() + ':' + String(now.getMinutes()).padStart(2, '0');
+
+            methaneData.push(value);
+            methaneData.shift();
+            labels.push(timeLabel);
+            labels.shift();
+            methaneChart.update();
+
+            document.getElementById('ppm-value').textContent = value + ' PPM';
+
+            const statusEl = document.getElementById('ppm-status');
+            if (value < 45) {
+                statusEl.textContent = 'Nível Moderado';
+                statusEl.style.color = '#1d4ed8';
+            } else if (value < 60) {
+                statusEl.textContent = 'Nível Elevado';
+                statusEl.style.color = '#d97706';
+            } else {
+                statusEl.textContent = '⚠ ALERTA CRÍTICO';
+                statusEl.style.color = '#dc2626';
+            }
+        }
+        setInterval(updateMethane, 3000);
+
+        /* ── NAVBAR SCROLL ── */
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        /* ── REVEAL ON SCROLL ── */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 70);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        /* ── FORMULÁRIO ── */
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('cta-btn');
+            btn.textContent = '✓ Mensagem enviada! Entraremos em contato.';
+            btn.style.background = '#16a34a';
+            btn.disabled = true;
+        }
+    </script>
+
+</body>
+
+</html>
