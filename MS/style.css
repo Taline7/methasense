@@ -50,6 +50,11 @@ body {
     color: var(--text-body);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    transition: background 0.5s ease;
+}
+
+body.critical-alert {
+    background: #fff5f5;
 }
 
 img { max-width: 100%; display: block; }
@@ -322,7 +327,6 @@ a   { color: inherit; text-decoration: none; }
 .section-navy2  { background: #0f2548; }
 .border-top     { border-top: 1px solid var(--border-light); }
 
-/* Textos em seções escuras — especificidade reforçada */
 .section-navy h2,
 .section-navy2 h2,
 .section-navy .content h2,
@@ -585,7 +589,6 @@ a   { color: inherit; text-decoration: none; }
     justify-content: center;
 }
 
-/* Cards brancos dentro da section-navy mantêm texto escuro */
 .section-navy .dashboard-card h3,
 .section-navy .dashboard-card .ppm-value,
 .section-navy .alert-card h4 { color: var(--text-dark); }
@@ -604,10 +607,21 @@ a   { color: inherit; text-decoration: none; }
     border-radius: var(--radius-lg);
     padding: 26px;
     box-shadow: var(--shadow-md);
-    transition: box-shadow var(--transition);
+    transition: box-shadow var(--transition), border-top-color var(--transition);
 }
 
 .dashboard-card:hover { box-shadow: var(--shadow-xl); }
+
+/* estado de alerta crítico no card */
+.dashboard-card.alert-critical {
+    border-top-color: #dc2626;
+    animation: cardPulse 1s ease infinite;
+}
+
+@keyframes cardPulse {
+    0%, 100% { box-shadow: var(--shadow-md); }
+    50%       { box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.18), var(--shadow-md); }
+}
 
 .dashboard-header {
     display: flex;
@@ -632,7 +646,7 @@ a   { color: inherit; text-decoration: none; }
     font-weight: 700;
     letter-spacing: 2px;
     color: #16a34a;
-    background: #f0fdf4;
+    background: #f0f2fd;
     border: 1px solid #bbf7d0;
     padding: 5px 11px;
     border-radius: var(--radius-pill);
@@ -658,6 +672,7 @@ a   { color: inherit; text-decoration: none; }
     letter-spacing: -3px;
     margin-bottom: 4px;
     line-height: 1;
+    transition: color var(--transition);
 }
 
 .ppm-status {
@@ -665,12 +680,36 @@ a   { color: inherit; text-decoration: none; }
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--accent);
+    transition: color var(--transition);
 }
 
 #methaneChart {
     margin-top: 10px;
     width: 100% !important;
     height: 230px !important;
+}
+
+/* ── MAPA ── */
+.map-wrapper {
+    margin-top: 22px;
+}
+
+.map-wrapper h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-mid);
+    display: block;
+    filter: saturate(0.7) contrast(0.9);
 }
 
 /* ── ALERTAS ── */
@@ -680,11 +719,10 @@ a   { color: inherit; text-decoration: none; }
     flex-direction: column;
     gap: 11px;
 }
-
 .alert-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border-mid);
-    border-left: 4px solid var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     padding: 18px;
     box-shadow: var(--shadow-sm);
@@ -758,6 +796,28 @@ a   { color: inherit; text-decoration: none; }
     line-height: 1.5;
     font-weight: 500;
     margin: 0;
+}
+
+/* ── Frase de impacto social ── */
+.impact-social {
+    margin-top: 36px;
+    padding: 22px 28px;
+    background: var(--accent-ghost);
+    border: 1px solid var(--border-navy);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.impact-social p {
+    font-size: 0.95rem !important;
+    color: var(--navy-mid) !important;
+    font-weight: 600 !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
 }
 
 /* ════════════════════════════════════════════
@@ -1171,4 +1231,7 @@ a   { color: inherit; text-decoration: none; }
 
     .cta-section h2 { font-size: 1.72rem; }
     .contact-info   { flex-direction: column; align-items: center; gap: 14px; }
+
+    .impact-social  { border-radius: var(--radius-md); border-left-width: 4px; }
+    .map-wrapper iframe { height: 160px; }
 }

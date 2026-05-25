@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MethaSense — Monitoramento Inteligente de Metano</title>
     <meta name="description"
-        content="Plataforma inteligente para monitoramento de emissões de metano em tempo real. Liga Jovem Sebrae 2026.">
+        content="Solução acessível para monitoramento de emissões de metano em tempo real. Liga Jovem Sebrae 2026.">
     <meta property="og:title" content="MethaSense — Monitoramento de Metano">
-    <meta property="og:description" content="Plataforma inteligente para detectar emissões de metano em tempo real.">
+    <meta property="og:description" content="Solução acessível para detectar emissões de metano em tempo real.">
     <meta property="og:image" content="assets/hero.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,14 +40,14 @@
     <section class="hero" aria-label="Apresentação">
         <div class="hero-content">
             <p class="hero-mini">Tecnologia Ambiental · Liga Jovem Sebrae 2026</p>
-            <h1>Detectando o invisível<br>antes que vire desastre.</h1>
+            <h1>Detectando o invisível<br>antes que coloque vidas em risco.</h1>
             <p class="hero-text">
-                Plataforma inteligente para monitoramento de emissões de metano em tempo real —
+                Solução acessível para monitoramento de emissões de metano em tempo real —
                 dados concretos para decisões ambientais mais rápidas e eficazes.
             </p>
             <div class="buttons">
                 <a href="#tecnologia" class="btn-primary">Conhecer a Solução</a>
-                <a href="#contato" class="btn-secondary">Solicitar Demo →</a>
+                <a href="#contato" class="btn-secondary">Entrar em contato →</a>
             </div>
         </div>
     </section>
@@ -131,7 +131,8 @@
             <div class="card reveal">
                 <div class="card-icon">⚠️</div>
                 <h3>Alertas</h3>
-                <p>Sistema identifica riscos ambientais e gera alertas em tempo real.</p>
+                <p>Sistema identifica riscos ambientais e gera alertas em tempo real, permitindo respostas rápidas antes
+                    que o problema se agrave.</p>
             </div>
         </div>
         <div class="tech-chips reveal">
@@ -191,11 +192,11 @@
             </div>
             <div class="section-divider"></div>
             <p>A plataforma acompanha continuamente os níveis de metano, permitindo identificar alterações críticas e
-                responder rapidamente.</p>
+                responder rapidamente — antes que o problema coloque vidas em risco.</p>
         </div>
 
         <div class="dashboard-container reveal">
-            <div class="dashboard-card">
+            <div class="dashboard-card" id="main-dashboard-card">
                 <div class="dashboard-header">
                     <h3>Nível Atual de Metano</h3>
                     <div class="status-live" aria-live="polite">
@@ -207,20 +208,34 @@
                 <p class="ppm-status" id="ppm-status">Nível Moderado</p>
                 <canvas id="methaneChart" role="img"
                     aria-label="Gráfico de concentração de metano ao longo do tempo"></canvas>
+
+                <!-- MAPA DE MONITORAMENTO -->
+                <div class="map-wrapper reveal">
+                    <h4>📍 Área de Monitoramento</h4>
+                    <iframe
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-40.70,-3.85,-40.50,-3.65&layer=mapnik"
+                        title="Mapa da área de monitoramento"
+                        loading="lazy">
+                    </iframe>
+                </div>
             </div>
 
             <div class="alerts-box">
                 <div class="alert-card reveal">
                     <h4>⚠️ Área Monitorada</h4>
-                    <p>Ambiente de monitoramento experimental</p>
+                    <p>Ambiente de monitoramento experimental — região noroeste do Ceará</p>
                 </div>
                 <div class="alert-card reveal">
                     <h4>📡 Sensores Integrados</h4>
-                    <p>Coleta contínua de dados ambientais</p>
+                    <p>Coleta contínua de dados ambientais via sensores MQ-4 em campo</p>
                 </div>
                 <div class="alert-card reveal">
                     <h4>🛰️ Status do Sistema</h4>
                     <p>Plataforma operacional em demonstração</p>
+                </div>
+                <div class="alert-card reveal" id="alert-level-card">
+                    <h4 id="alert-level-title">✅ Nível Normal</h4>
+                    <p id="alert-level-desc">Concentração dentro dos parâmetros aceitáveis</p>
                 </div>
             </div>
         </div>
@@ -254,9 +269,10 @@
                 <p>empresas no público-alvo inicial do Brasil</p>
             </div>
         </div>
-        <div class="reveal" style="margin-top: 40px;">
-            <p>A MethaSense democratiza o monitoramento de emissões: tornamos acessível para fazendas, indústrias de
-                médio porte e prefeituras o que antes era exclusivo de grandes corporações.</p>
+
+        <!-- FRASE DE IMPACTO SOCIAL -->
+        <div class="impact-social reveal">
+            <p>🌱 Em comunidades sem acesso à tecnologia ambiental, a MethaSense pode ser a diferença entre prevenção e desastre. Democratizamos o monitoramento de emissões: o que antes era exclusivo de grandes corporações agora está ao alcance de fazendas, prefeituras e indústrias de médio porte.</p>
         </div>
     </section>
 
@@ -390,7 +406,7 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h2>METHASENSE</h2>
-                <p>Plataforma inteligente para monitoramento de emissões de metano em tempo real.</p>
+                <p>Solução acessível para monitoramento de emissões de metano em tempo real.</p>
                 <p>Tecnologia ambiental voltada à prevenção, sustentabilidade e análise de dados.</p>
             </div>
             <div class="footer-column">
@@ -463,6 +479,7 @@
             }
         });
 
+        /* ── ATUALIZAÇÃO DO DASHBOARD ── */
         function updateMethane() {
             const value = Math.floor(Math.random() * 40) + 30;
             const now = new Date();
@@ -472,22 +489,55 @@
             methaneData.shift();
             labels.push(timeLabel);
             labels.shift();
+
+            // Muda a cor do dataset baseado no nível
+            let datasetColor = '#1d4ed8';
+            if (value >= 60) datasetColor = '#dc2626';
+            else if (value >= 45) datasetColor = '#d97706';
+
+            methaneChart.data.datasets[0].borderColor = datasetColor;
+            methaneChart.data.datasets[0].backgroundColor = datasetColor.replace(')', ', 0.10)').replace('rgb', 'rgba');
             methaneChart.update();
 
             document.getElementById('ppm-value').textContent = value + ' PPM';
 
-            const statusEl = document.getElementById('ppm-status');
+            const statusEl   = document.getElementById('ppm-status');
+            const dashCard   = document.getElementById('main-dashboard-card');
+            const alertTitle = document.getElementById('alert-level-title');
+            const alertDesc  = document.getElementById('alert-level-desc');
+
             if (value < 45) {
+                // NÍVEL NORMAL
                 statusEl.textContent = 'Nível Moderado';
                 statusEl.style.color = '#1d4ed8';
+                document.body.classList.remove('critical-alert');
+                dashCard.classList.remove('alert-critical');
+                alertTitle.textContent = '✅ Nível Normal';
+                alertTitle.style.color = '#16a34a';
+                alertDesc.textContent  = 'Concentração dentro dos parâmetros aceitáveis';
+
             } else if (value < 60) {
+                // NÍVEL ELEVADO
                 statusEl.textContent = 'Nível Elevado';
                 statusEl.style.color = '#d97706';
+                document.body.classList.remove('critical-alert');
+                dashCard.classList.remove('alert-critical');
+                alertTitle.textContent = '⚠️ Nível Elevado';
+                alertTitle.style.color = '#d97706';
+                alertDesc.textContent  = 'Atenção: concentração acima do padrão esperado';
+
             } else {
+                // ALERTA CRÍTICO
                 statusEl.textContent = '⚠ ALERTA CRÍTICO';
                 statusEl.style.color = '#dc2626';
+                document.body.classList.add('critical-alert');
+                dashCard.classList.add('alert-critical');
+                alertTitle.textContent = '🚨 ALERTA CRÍTICO';
+                alertTitle.style.color = '#dc2626';
+                alertDesc.textContent  = 'Concentração perigosa detectada — resposta imediata necessária!';
             }
         }
+
         setInterval(updateMethane, 3000);
 
         /* ── NAVBAR SCROLL ── */
